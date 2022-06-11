@@ -1,8 +1,8 @@
 {
-    "name": "com.xavier.architecture-mma",
+    "name": "com.xavier.mma",
     "version": "0.1.0",
-    "displayName": "MMA Architecture (Middleware Module App)",
-    "description": "Architecture to build Modular Enginering Projects",
+    "displayName": "Kingdox MMA",
+    "description": "(Middleware Module App) Architecture to build Modular Enginering Projects",
     "unity": "2020.1",
     "keywords": [
         "architecture",
@@ -18,7 +18,7 @@
     "hideInEditor": true,
     "repository": {
         "type": "git",
-        "url": "git+https://kingdox@github.com/kingdox/architecture_mma.git"
+        "url": "git+https://kingdox@github.com/kingdox/mma.git"
     },
     "license": "ISC",
     "bugs": {

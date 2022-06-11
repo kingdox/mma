@@ -1,0 +1,55 @@
+#region Access
+using System;
+using UnityEngine;
+using X;
+#endregion
+namespace Architecture.#SCRIPTNAME#
+{
+
+    /// <summary>
+    /// #SCRIPTNAME#
+    /// </summary>
+    public sealed class #SCRIPTNAME#_Application : Application<#SCRIPTNAME#_Application.Reference, #SCRIPTNAME#_Application.Model>
+    {
+        [Serializable]
+        public struct Reference {
+            #region References
+            //[field:SerializeField] public Transform Transform { get; private set; }
+            [field: SerializeField] public Transform Transform { get; private set; }
+            #endregion
+        }
+
+        [Serializable]
+        public struct Model {
+            #region Actions
+            //// Action ON____
+            //public Action OnTest;
+            #endregion
+            #region Variables
+            //// string, int, bool...
+            //public string test_;
+            #endregion
+
+        }
+        #region Events
+        // App se comporta como el controlador de los comportamientos, donde ejecutará acciones hacia los
+        // Controladores, modelos, vistas, etc
+        protected override void OnSubscription(bool condition)
+        {
+            //Your Subscriptions
+        }
+        #endregion
+        #region Methods Reactions
+         // your custom On___
+        #endregion
+        #region Contracts
+        //Comunicación entre otras Application, mediante interfaces
+        #endregion
+    }
+
+    public static partial class Extension
+    {
+        //public static void Test(this #SCRIPTNAME#_Application app) {
+        //}
+    }
+}

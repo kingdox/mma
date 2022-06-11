@@ -1,5 +1,5 @@
 {
-    "name": "com.xavier.architecture-unity-middleware-module-app",
+    "name": "com.xavier.architecture-mma",
     "version": "0.1.0",
     "displayName": "MMA Architecture (Middleware Module App)",
     "description": "Architecture to build Modular Enginering Projects",
@@ -18,7 +18,7 @@
     "hideInEditor": true,
     "repository": {
         "type": "git",
-        "url": "git+https://kingdox@github.com/kingdox/architecture_unity_middleware-module-app.git"
+        "url": "git+https://kingdox@github.com/kingdox/architecture_mma.git"
     },
     "license": "ISC",
     "bugs": {

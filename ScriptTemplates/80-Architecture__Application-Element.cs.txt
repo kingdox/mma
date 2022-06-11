@@ -1,7 +1,6 @@
 #region Access
 using System;
 using UnityEngine;
-using X;
 #endregion
 namespace Architecture.#SCRIPTNAME#
 {

@@ -22,7 +22,16 @@ public abstract class Module: MonoBehaviour
 #region Methods
     private void __Subscribe(bool condition){
         OnSubscription(condition);
+        OnExtendedSubscription(condition);
     }
+    /// <summary>
+    /// Specific Module Implementation
+    /// </summary>
     protected abstract void OnSubscription(bool condition);
-#endregion
+    /// <summary>
+    /// Extended Module Implementation (by partials)
+    /// </summary>
+    protected virtual void OnExtendedSubscription(bool condition) { }
+
+    #endregion
 }

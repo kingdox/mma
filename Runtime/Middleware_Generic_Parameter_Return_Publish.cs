@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 #endregion
-
+ 
 public static partial class Middleware<TParameter, TReturn>
 {
     #region Variables

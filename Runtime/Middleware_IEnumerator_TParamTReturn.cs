@@ -11,7 +11,7 @@ public static partial class Middleware<TParameter,TReturn>
     private static readonly Dictionary<string, Func<TParameter, IEnumerator<TReturn>>> dic_request = new Dictionary<string, Func<TParameter, IEnumerator<TReturn>>>();
     #endregion
     #region Methods
-    public static void Subscribe(bool condition, string key, Func<TParameter, IEnumerator<TReturn>> request)
+    public static void Subscribe_IEnumerator(bool condition, string key, Func<TParameter, IEnumerator<TReturn>> request)
     {
         if (condition)
         {

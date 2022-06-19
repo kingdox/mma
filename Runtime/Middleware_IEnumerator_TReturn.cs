@@ -11,7 +11,7 @@ public static partial class Middleware<T>
     private static readonly Dictionary<string, Func<IEnumerator<T>>> dic_coroutine_treturn = new Dictionary<string, Func<IEnumerator<T>>>();
     #endregion
     #region Methods
-    public static void Subscribe(bool condition, string key, Func<IEnumerator<T>> request)
+    public static void Subscribe_IEnumerator(bool condition, string key, Func<IEnumerator<T>> request)
     {
         if (condition)
         {

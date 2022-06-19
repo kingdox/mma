@@ -11,7 +11,7 @@ public static partial class Middleware<T>
     private static readonly Dictionary<string, Func<T>> dic_publish_return = new Dictionary<string, Func<T>>();
     #endregion
     #region Methods
-    public static void Subscribe(bool condition, string key, Func<T> action)
+    public static void Subscribe_Publish(bool condition, string key, Func<T> action)
     {
         if (condition)
         {

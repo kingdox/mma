@@ -12,7 +12,7 @@ public static partial class Middleware<TParameter,TReturn>
     private static readonly Dictionary<string, Func<TParameter, Task<TReturn>>> dic_task_request = new Dictionary<string, Func<TParameter, Task<TReturn>>>();
     #endregion
     #region Methods
-    public static void Subscribe(bool condition, string key, Func<TParameter, Task<TReturn>> request)
+    public static void Subscribe_Task(bool condition, string key, Func<TParameter, Task<TReturn>> request)
     {
         if (condition)
         {

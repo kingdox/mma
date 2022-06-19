@@ -10,7 +10,7 @@ public static partial class Middleware
     private static readonly Dictionary<string, Action> dic_publish = new Dictionary<string, Action>();
     #endregion
     #region Methods
-    public static void Subscribe(bool condition, string key, Action action)
+    public static void Subscribe_Publish(bool condition, string key, Action action)
     {
         if (condition)
         {

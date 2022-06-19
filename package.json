@@ -1,6 +1,6 @@
 {
     "name": "com.kingdox.mma",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "displayName": "Kingdox MMA",
     "description": "(Middleware Module App) Architecture to build Modular Enginering Projects",
     "unity": "2020.1",

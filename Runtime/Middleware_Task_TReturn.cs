@@ -27,9 +27,12 @@ public static partial class Middleware<T>
     {
         if (dic_task_request_response.ContainsKey(key))
         {
-            await dic_task_request_response[key].Invoke();
+            return await dic_task_request_response[key].Invoke();
         }
-        return default;
+        else
+        {
+            return default;
+        }
     }
     #endregion
 }

@@ -1,8 +1,8 @@
 #region
 using System;
-using System.Collections;
+//using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+//using UnityEngine;
 #endregion
  
 public static partial class Middleware<TParameter, TReturn>
@@ -11,7 +11,7 @@ public static partial class Middleware<TParameter, TReturn>
     private static readonly Dictionary<string, Func<TParameter, TReturn>> dic_publish = new Dictionary<string, Func<TParameter, TReturn>>();
     #endregion
     #region Methods
-    public static void Subscribe_Publish(bool condition, string key, Func<TParameter,TReturn> action)
+    public static void Subscribe(bool condition, string key, Func<TParameter,TReturn> action)
     {
         if (condition)
         {

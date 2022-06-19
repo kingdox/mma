@@ -5,7 +5,7 @@
 //using UnityEngine;
 #endregion
 
-public static partial class Middleware<TParameter>
+public static partial class Middleware<T>
 {
     #region Variables
     #endregion

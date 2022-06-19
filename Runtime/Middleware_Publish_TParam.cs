@@ -1,17 +1,17 @@
 #region
 using System;
-using System.Collections;
+//using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+//using UnityEngine;
 #endregion
 
-public static partial class Middleware<TParameter>
+public static partial class Middleware<T>
 {
     #region Variables
-    private static readonly Dictionary<string, Action<TParameter>> dic_publish = new Dictionary<string, Action<TParameter>>();
+    private static readonly Dictionary<string, Action<T>> dic_publish = new Dictionary<string, Action<T>>();
     #endregion
     #region Methods
-    public static void Subscribe_Publish(bool condition, string key, Action<TParameter> action)
+    public static void Subscribe(bool condition, string key, Action<T> action)
     {
         if (condition)
         {
@@ -32,7 +32,7 @@ public static partial class Middleware<TParameter>
             }
         }
     }
-    public static void Invoke_Publish(string key, TParameter value = default)
+    public static void Invoke_Publish(string key, T value)
     {
         //Solo hace Invoke si hay una asignación...
         if (dic_publish.ContainsKey(key))

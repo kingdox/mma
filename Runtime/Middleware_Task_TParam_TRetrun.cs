@@ -1,10 +1,10 @@
 #region
 using System;
 using System.Threading.Tasks;
-using System.Threading;
-using System.Collections;
+//using System.Threading;
+//using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+//using UnityEngine;
 #endregion
 public static partial class Middleware<TParameter,TReturn>
 {
@@ -12,7 +12,7 @@ public static partial class Middleware<TParameter,TReturn>
     private static readonly Dictionary<string, Func<TParameter, Task<TReturn>>> dic_task_request = new Dictionary<string, Func<TParameter, Task<TReturn>>>();
     #endregion
     #region Methods
-    public static void Subscribe_Task(bool condition, string key, Func<TParameter, Task<TReturn>> request)
+    public static void Subscribe(bool condition, string key, Func<TParameter, Task<TReturn>> request)
     {
         if (condition)
         {
@@ -23,8 +23,7 @@ public static partial class Middleware<TParameter,TReturn>
             dic_task_request.Remove(key);
         }
     }
-    //public static async Task InvokeTaskRequest(System.Enum key) => await InvokeTaskRequest(key, key);
-    public static async Task<TReturn> Invoke_Task(string key, TParameter value=default)
+    public static async Task<TReturn> Invoke_Task(string key, TParameter value)
     {
         if (dic_task_request.ContainsKey(key))
         {

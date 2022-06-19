@@ -1,17 +1,16 @@
 #region
 using System;
-using System.Collections;
+//using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+//using UnityEngine;
 #endregion
-
 public static partial class Middleware
 {
     #region Variables
     private static readonly Dictionary<string, Action> dic_publish = new Dictionary<string, Action>();
     #endregion
     #region Methods
-    public static void Subscribe_Publish(bool condition, string key, Action action)
+    public static void Subscribe(bool condition, string key, Action action)
     {
         if (condition)
         {
@@ -32,6 +31,7 @@ public static partial class Middleware
             }
         }
     }
+
     public static void Invoke_Publish(string key)
     {
         //Solo hace Invoke si hay una asignación...

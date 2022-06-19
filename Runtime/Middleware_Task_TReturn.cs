@@ -25,9 +25,9 @@ public static partial class Middleware<T>
     }
     public static async Task<T> Invoke_Task(string key)
     {
-        if (dic_task_request_param.ContainsKey(key))
+        if (dic_task_request_response.ContainsKey(key))
         {
-             return await dic_task_request_response[key].Invoke();
+            await dic_task_request_response[key].Invoke();
         }
         return default;
     }

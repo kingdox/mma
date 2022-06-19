@@ -1,5 +1,5 @@
 #region
-//using System;
+using System;
 using System.Threading.Tasks;
 //using System.Threading;
 //using System.Collections;
@@ -9,10 +9,10 @@ using System.Collections.Generic;
 public static partial class Middleware<T>
 {
     #region Variables
-    private static readonly Dictionary<string, Task<T>> dic_task_request_response = new Dictionary<string, Task<T>>();
+    private static readonly Dictionary<string, Func<Task<T>>> dic_task_request_response = new Dictionary<string, Func<Task<T>>>();
     #endregion
     #region Methods
-    public static void Subscribe_Task(bool condition, string key, Task<T> request)
+    public static void Subscribe_Task(bool condition, string key, Func<Task<T>> request)
     {
         if (condition)
         {
@@ -27,7 +27,7 @@ public static partial class Middleware<T>
     {
         if (dic_task_request_param.ContainsKey(key))
         {
-             return await dic_task_request_response[key];
+             return await dic_task_request_response[key].Invoke();
         }
         return default;
     }

@@ -10,4 +10,11 @@ public static class AsyncExtensorUtils
         while (!_task.IsCompleted) yield return null;
         if (_task.IsFaulted) throw _task.Exception;
     }
+    
+    public static IEnumerator<T> ToCoroutine<T>(this Task<T> _task)
+    {
+        while (!_task.IsCompleted) yield return default;
+        if (_task.IsFaulted) throw _task.Exception;
+        else yield return _task.Result;
+    }
 }

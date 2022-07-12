@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 #endregion
-namespace Architecture.#SCRIPTNAME#
+namespace MMA.#SCRIPTNAME#
 {
 
     /// <summary>

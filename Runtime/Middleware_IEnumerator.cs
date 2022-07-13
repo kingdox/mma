@@ -8,10 +8,10 @@ using System.Collections.Generic;
 public static partial class Middleware
 {
     #region Variables
-    private static readonly Dictionary<string, Func<IEnumerator>> dic_request = new Dictionary<string, Func<IEnumerator>>();
+    private static readonly Dictionary<int, Func<IEnumerator>> dic_request = new Dictionary<int, Func<IEnumerator>>();
     #endregion
     #region Methods
-    public static void Subscribe_IEnumerator(bool condition, string key, Func<IEnumerator> request)
+    public static void Subscribe_IEnumerator(in bool condition, in int key, Func<IEnumerator> request)
     {
         if (condition)
         {
@@ -22,7 +22,7 @@ public static partial class Middleware
             dic_request.Remove(key);
         }
     }
-    public static IEnumerator Invoke_IEnumerator(string key)
+    public static IEnumerator Invoke_IEnumerator(in int key)
     {
         if (dic_request.ContainsKey(key))
         {

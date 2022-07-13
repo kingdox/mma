@@ -8,10 +8,10 @@ using System.Collections.Generic;
 public static partial class Middleware<T>
 {
     #region Variables
-    private static readonly Dictionary<string, Func<T>> dic_publish_return = new Dictionary<string, Func<T>>();
+    private static readonly Dictionary<int, Func<T>> dic_publish_return = new Dictionary<int, Func<T>>();
     #endregion
     #region Methods
-    public static void Subscribe_Publish(bool condition, string key, Func<T> action)
+    public static void Subscribe_Publish(in bool condition, in int key, Func<T> action)
     {
         if (condition)
         {
@@ -33,7 +33,7 @@ public static partial class Middleware<T>
         }
         //Invoke(Invoke)
     }
-    public static T Invoke_Publish(string key)
+    public static T Invoke_Publish(in int key)
     {
         //Solo hace Invoke si hay una asignación...
         if (dic_publish_return.ContainsKey(key))

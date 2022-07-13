@@ -9,10 +9,10 @@ using System.Collections.Generic;
 public static partial class Middleware
 {
     #region Variables
-    private static readonly Dictionary<string, Func<Task>> _dic_task_ = new Dictionary<string, Func<Task>>();
+    private static readonly Dictionary<int, Func<Task>> _dic_task_ = new Dictionary<int, Func<Task>>();
     #endregion
     #region Methods
-    public static void Subscribe_Task(bool condition, string key, Func<Task> request)
+    public static void Subscribe_Task(in bool condition, in int key, Func<Task> request)
     {
         if (condition)
         {
@@ -23,7 +23,7 @@ public static partial class Middleware
             _dic_task_.Remove(key);
         }
     }
-    public static async Task Invoke_Task(string key)
+    public static async Task Invoke_Task(int key)
     {
         if (_dic_task_.ContainsKey(key))
         {

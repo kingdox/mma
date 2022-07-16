@@ -36,4 +36,11 @@ public static partial class ReactiveExtensorUtils
         else btn.onClick.RemoveListener(action);
     }
 
+
+    public static void Subscribe(this bool condtion, Slider slider, UnityAction<float> action)
+    {
+        if (condtion) slider.onValueChanged.AddListener(action);
+        else slider.onValueChanged.RemoveListener(action);
+    }
+         
 }

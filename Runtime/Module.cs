@@ -7,12 +7,18 @@ using UnityEngine;
 public abstract class Module: MonoBehaviour
 {
 #region Events
-#if UNITY_EDITOR
+#if false
     private void Awake()
     {
         if (transform.childCount > 0){
-            Debug.LogWarning($"Ha quedado Apps basura en {transform.name}, Limpiando...");
-            foreach (Transform child in transform) Destroy(child.gameObject);
+            foreach (Transform child in transform)
+            {
+                if (child.TryGetComponent(out Application app))
+                {  
+                    Debug.LogWarning($"Ha quedado Apps basura en {transform.name}, Limpiando... {child.name}");
+                    Destroy(child.gameObject);
+                }
+            }
         }
     }
 #endif

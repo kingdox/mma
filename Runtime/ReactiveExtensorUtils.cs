@@ -1,5 +1,6 @@
 using System;
 using UnityEngine.Events;
+using UnityEngine.UI;
 public static partial class ReactiveExtensorUtils 
 {
     /// <summary>
@@ -26,5 +27,13 @@ public static partial class ReactiveExtensorUtils
         else del -= action;
     }
 
+    /// <summary>
+    /// Susbcribe the click of a button
+    /// </summary>
+    public static void Subscribe(this bool condition, Button btn, UnityAction action)
+    {
+        if (condition) btn.onClick.AddListener(action);
+        else btn.onClick.RemoveListener(action);
+    }
 
 }

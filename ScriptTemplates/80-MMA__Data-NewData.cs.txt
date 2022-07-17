@@ -1,0 +1,10 @@
+
+public static class #SCRIPTNAME#
+{
+    //public static int _ =
+    //public static ref int _  =>
+    //
+    //public static ref string _  =>
+    //
+    //....
+}
